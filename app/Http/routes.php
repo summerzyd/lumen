@@ -11,6 +11,9 @@
 |
 */
 
-$app->get('/', function () use ($app) {
+define('ROUTE_BASE', 'lumen/public/');
+$app->get(ROUTE_BASE.'/', function () use ($app) {
     return $app->version();
 });
+$app->get(ROUTE_BASE.'site/captcha', 'SiteController@captcha');
+$app->get(ROUTE_BASE.'site/login', 'SiteController@login');
